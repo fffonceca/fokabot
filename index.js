@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const ffmpeg = require("ffmpeg-static");
 const { DisTube } = require('distube');
 const fs = require('fs');
 const path = require('path');
@@ -16,6 +17,7 @@ const client = new Client({
 
 // Initialize DisTube
 client.distube = new DisTube(client, {
+    ffmpeg,
     emitNewSongOnly: false,
     leaveOnEmpty: true,
     leaveOnFinish: false,
